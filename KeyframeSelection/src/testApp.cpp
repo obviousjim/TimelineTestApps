@@ -9,12 +9,9 @@ void testApp::setup(){
 	timeline.setup();
     timeline.setFrameRate(24);
 
-//	timeline.addImageSequence("testsequence");
-	
-    videoPlayer.loadMovie("/Volumes/IMPOSTER/EyeoMediaBin/Julia03/color/MVI_1007.mov"); //TODO: make common example 
-	timeline.setDurationInSeconds(videoPlayer.getPlayer()->getDuration());
-	timeline.addElement("Video", &videoPlayer);
-
+	timeline.addKeyframes("Track 1");
+	timeline.addKeyframes("Track 2");
+	timeline.addTriggers("Bang 1");
 }
 
 //--------------------------------------------------------------
@@ -29,7 +26,9 @@ void testApp::draw(){
 
 //--------------------------------------------------------------
 void testApp::keyPressed(int key){
-
+	if(key ==  ' '){
+        timeline.togglePlay();
+    }
 }
 
 //--------------------------------------------------------------
