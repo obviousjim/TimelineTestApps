@@ -2,6 +2,7 @@
 
 #include "ofMain.h"
 #include "ofxTimeline.h"
+#include "ofxTLAudioWaveform.h"
 
 class testApp : public ofBaseApp{
 
@@ -19,12 +20,10 @@ class testApp : public ofBaseApp{
 	void windowResized(int w, int h);
 	void dragEvent(ofDragInfo dragInfo);
 	void gotMessage(ofMessage msg);
-    
+	
 	ofxTimeline timeline;
-	ofxTimeline subline;
-    
-    vector<ofxTimeline*> sublines;
-    
-    void bangFired(ofxTLBangEventArgs& bang);
-    
+	ofxTLAudioWaveform waveform;
+
+    float lastBang;
+	void bangFired(ofxTLBangEventArgs& bang);
 };
