@@ -17,7 +17,7 @@ void testApp::setup(){
 	timeline.enableSnapToBPM(120.f);
 	timeline.enableDrawBPMGrid(true);
 	
-	timeline.addElement("Track", &waveform);
+	timeline.addTrack("Track", &waveform);
     waveform.loadSoundfile("4chan.wav");
 	timeline.setDurationInSeconds(waveform.getDuration());
     
